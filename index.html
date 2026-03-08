@@ -46,9 +46,7 @@
     }
 
     .logo {
-      height: 64px;
-      width: 64px;
-  display: flex;
+    display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.75rem;
@@ -58,6 +56,10 @@
   text-decoration: none;
   letter-spacing: -0.01em;
   cursor: pointer;
+}
+    .logo-img {
+  height: 64px; 
+  width: 64px; 
 }
 .logo span { color: var(--accent); }
 
@@ -484,9 +486,10 @@
 
   <!-- HEADER -->
   <header>
-    <a class="logo" onclick="showPage('blog')">
-      <img src="assets/logo.png" alt="Düşünseli Kitap Kulübü" class="logo" />
-      Düşünseli Kitap Kulübü<span>.</span></a>
+      <a class="logo" onclick="showPage('blog')">
+    <img src="assets/logo.png" alt="Düşünseli Kitap Kulübü" class="logo-img" />
+    Düşünseli Kitap Kulübü<span>.</span>
+  </a>
     <nav>
       <a onclick="showPage('blog')" id="nav-blog" class="active">Yazılar</a>
       <a href="#">Hakkında</a>
