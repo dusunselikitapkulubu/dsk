@@ -437,7 +437,12 @@
       const renkler = ['c1','c2','c3','c4','c5','c6'];
       const renk = k.renk || renkler[i % renkler.length];
       return `<article class="post-card">
-        <div class="post-card-img"><div class="color-block ${renk}"></div></div>
+        <div class="post-card-img">
+  ${item.gorsel 
+    ? `<img src="${item.gorsel}" alt="${item.baslik}">`
+    : `<div class="color-block ${renk}"></div>`
+  }
+</div>
         <span class="post-category">${k.kategori}</span>
         <h3>${k.baslik}</h3>
         <p>${k.aciklama}</p>
