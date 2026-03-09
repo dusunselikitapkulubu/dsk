@@ -439,8 +439,8 @@
       const renk = k.renk || renkler[i % renkler.length];
       return `<article class="post-card">
         <div class="post-card-img">
-  ${item.gorsel 
-    ? `<img src="${item.gorsel}" alt="${item.baslik}">`
+  ${k.gorsel 
+    ? `<img src="${k.gorsel}" alt="${k.baslik}">`
     : `<div class="color-block ${renk}"></div>`
   }
 </div>
