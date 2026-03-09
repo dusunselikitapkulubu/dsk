@@ -285,7 +285,7 @@ const ICERIK = {
       yazar:     "MODS",
       tarih:     "Nisan 2026",
       sure:      "",
-      gorsel:   "assets/Etkinlikler/reeding.png"
+      gorsel:   "assets/Etkinlikler/reeding.png",
     },
 
     // Etkinlik kartları — yeni eklemek için listeye obje ekleyin
@@ -298,7 +298,7 @@ const ICERIK = {
         yazar:    "MODS",
         tarih:    "Mayıs 2026",
         sure:     "",
-        renk:     "c1",
+        renk:     "assets/Etkinlikler/reeding.png",
       },
       {
         kategori: "Yönetmen Sineması",
