@@ -413,26 +413,39 @@
   function renderEtkinlikler() {
     const v = ICERIK.etkinlikler;
 
-    const oneItemHTML = v.one
-      ? `<section class="featured">
-          <div class="section-title">Öne Çıkan Etkinlik</div>
-          <div class="featured-card">
-            <div class="featured-img"></div>
-            <div class="featured-content">
-              <span class="post-category">${v.one.kategori}</span>
-              <h2>${v.one.baslik}</h2>
-              <p>${v.one.aciklama}</p>
-              <div class="tags">${(v.one.etiketler||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-              ${v.one.linkMetin ? `<a class="read-more">${v.one.linkMetin}<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>` : ''}
-              <div class="post-meta" style="margin-top:1.5rem;">
-                <span class="author">${v.one.yazar}</span>
-                <span class="dot"></span>
-                <span>${v.one.tarih}</span>
-                ${v.one.sure ? `<span class="dot"></span><span>${v.one.sure}</span>` : ''}
-              </div>
-            </div>
+   const oneItemHTML = v.one
+  ? `<section class="featured">
+      <div class="section-title">Öne Çıkan Etkinlik</div>
+      <div class="featured-card">
+        <div class="featured-img">
+          ${v.one.gorsel 
+            ? `<img src="${v.one.gorsel}" alt="${v.one.baslik}">`
+            : `<div class="color-block"></div>`
+          }
+        </div>
+
+        <div class="featured-content">
+          <span class="post-category">${v.one.kategori}</span>
+          <h2>${v.one.baslik}</h2>
+          <p>${v.one.aciklama}</p>
+
+          <div class="tags">
+            ${(v.one.etiketler||[]).map(t=>`<span class="tag">${t}</span>`).join('')}
           </div>
-        </section>` : '';
+
+          ${v.one.linkMetin ? `<a class="read-more">${v.one.linkMetin}
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 7h10M8 3l4 4-4 4"/></svg></a>` : ''}
+
+          <div class="post-meta" style="margin-top:1.5rem;">
+            <span class="author">${v.one.yazar}</span>
+            <span class="dot"></span>
+            <span>${v.one.tarih}</span>
+            ${v.one.sure ? `<span class="dot"></span><span>${v.one.sure}</span>` : ''}
+          </div>
+        </div>
+      </div>
+    </section>` : '';
 
     const kartlarHTML = v.kartlar.map((k, i) => {
       const renkler = ['c1','c2','c3','c4','c5','c6'];
