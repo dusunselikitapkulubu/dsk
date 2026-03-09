@@ -285,6 +285,7 @@ const ICERIK = {
       yazar:     "MODS",
       tarih:     "Nisan 2026",
       sure:      "",
+      gorsel:   "assets/Etkinlikler/reeding.png"
     },
 
     // Etkinlik kartları — yeni eklemek için listeye obje ekleyin
