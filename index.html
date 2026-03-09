@@ -166,30 +166,89 @@
     .footer-links a:hover { color: var(--ink); }
 
     @media (max-width: 600px) { nav { gap: 1.2rem; } nav a { font-size: 0.75rem; } .chapter-letter { font-size: 2rem; } }
+
+    /* MOBİL MENÜ */
+
+.menu-toggle{
+  display:none;
+  font-size:1.8rem;
+  cursor:pointer;
+}
+
+@media (max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  nav{
+    position:absolute;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--surface);
+    border-bottom:1px solid var(--border);
+    flex-direction:column;
+    align-items:flex-start;
+    padding:1rem;
+    gap:0;
+    display:none;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  nav a{
+    width:100%;
+    padding:0.8rem 0;
+  }
+
+  .nav-dropdown{
+    width:100%;
+  }
+
+  .dropdown-menu{
+    position:static;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    border:none;
+    box-shadow:none;
+    padding-left:1rem;
+  }
+
+}
   </style>
 </head>
 <body>
 
   <header>
-    <a class="logo" onclick="showPage('basvuru')">
-      <img src="assets/logo.png" alt="Düşünseli Kitap Kulübü" class="logo-img" />
-      <span id="site-adi"></span><span>.</span>
-    </a>
-    <nav>
-      <a onclick="showPage('basvuru')"   id="nav-basvuru">Başvuru</a>
-      <a onclick="showPage('duyurular')" id="nav-duyurular">Duyurular</a>
-      <div class="nav-dropdown">
-        <a id="nav-hakkinda">Kulüp Hakkında</a>
-        <div class="dropdown-menu">
-          <a onclick="showHakkinda('genel')">Genel Bilgi</a>
-          <div class="dropdown-divider"></div>
-          <a onclick="showHakkinda('kurallar')">Kulüp Kuralları</a>
-        </div>
+  <a class="logo" onclick="showPage('basvuru')">
+    <img src="assets/logo.png" alt="Düşünseli Kitap Kulübü" class="logo-img" />
+    <span id="site-adi"></span><span>.</span>
+  </a>
+
+  <!-- MOBİL MENÜ BUTONU -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav>
+    <a onclick="showPage('basvuru')"   id="nav-basvuru">Başvuru</a>
+    <a onclick="showPage('duyurular')" id="nav-duyurular">Duyurular</a>
+
+    <div class="nav-dropdown">
+      <a id="nav-hakkinda">Kulüp Hakkında</a>
+      <div class="dropdown-menu">
+        <a onclick="showHakkinda('genel')">Genel Bilgi</a>
+        <div class="dropdown-divider"></div>
+        <a onclick="showHakkinda('kurallar')">Kulüp Kuralları</a>
       </div>
-      <a onclick="showPage('etkinlikler')" id="nav-etkinlikler">Etkinlikler</a>
-      <a onclick="showPage('iletisim')" id="nav-iletisim">İletişim</a>
-    </nav>
-  </header>
+    </div>
+
+    <a onclick="showPage('etkinlikler')" id="nav-etkinlikler">Etkinlikler</a>
+    <a onclick="showPage('iletisim')" id="nav-iletisim">İletişim</a>
+  </nav>
+</header>
 
   <div id="page-basvuru"   class="page"></div>
   <div id="page-duyurular" class="page"></div>
@@ -452,5 +511,10 @@
 
   showPage('basvuru');
   </script>
+  <script>
+function toggleMenu(){
+  document.querySelector("nav").classList.toggle("show");
+}
+</script>
 </body>
 </html>
