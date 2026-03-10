@@ -77,7 +77,7 @@ const ICERIK = {
   // ── Duyurular Sayfası ───────────────────────────────────
   duyurular: {
     heroEtiket:   "Haberler",
-    heroBaslik:   "Duyurular\nve <em>Etkinlikler</em>",
+    heroBaslik:   "Duyuru<em>lar</em>",
     heroAciklama: "Kulüp toplantıları, kitap seçimleri ve etkinlikler hakkında güncel bilgiler.",
 
     // tip: "yeni" | "etkinlik" | "bilgi"
