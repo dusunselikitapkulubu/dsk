@@ -24,6 +24,17 @@ const ICERIK = {
     // Üstteki turuncu rozet. Form açıldığında boş bırakın: rozet: ""
     rozet: "Başvurular Yakında Açılacak",
 
+    // Koşullar — her madde ayrı satırda gösterilir
+    kosullar: [
+      "<strong>I.</strong> Kulübe üyelik başvurusu başvuru formu aracılığıyla yapılır. Reel ortamlarda yüz yüze yapılan buluşmalara katılabilmek ve kulüp üyesi olabilmek için başvuru formunun doldurulması gereklidir.",
+      "<strong>Başvuru formu:</strong> <a href='https://forms.gle/Q2HXcBiZkrEuA9wB9' target='_blank'>forms.gle/Q2HXcBiZkrEuA9wB9</a>",
+      "<strong>II.</strong> Kulübe yeni katılan üyelerden katılım bedeli alınır; ancak bu bedel kulübün hesabına değil, kulübün belirlediği STK'lardan birine bağış olarak yapılır. Bağış dekontu MODS'a iletilmelidir; aksi takdirde başvuru geçersiz sayılır.",
+      "Bağış yapılabilecek kurumlar ve güncel tutar başvuru sayfasında belirtilir.",
+      "<strong>III.</strong> Başvurular MODS tarafından incelenir ve uygun kontenjan bulunması halinde başvuru sahibi kulüp iletişim gruplarına eklenir. Güncel kulüp kontenjanı maksimum <strong>70 kişidir</strong>.",
+      "<strong>IV.</strong> Başvuru formu kulübün genişleme politikalarına göre MODS tarafından belirli dönemlerde kapatılıp açılabilir.",
+      "<strong>V.</strong> Her üyelik grubu için ayrı bir WhatsApp iletişim grubu bulunur. Kulübün temel iletişim platformu bu gruplardır. Gruplar şu şekilde bölümlenmiştir:",
+    ],
+
     // Üyelik grupları — başvuru sayfasında kart olarak gösterilir
     uyelikGruplari: [
       {
@@ -56,17 +67,6 @@ const ICERIK = {
         ad:       "MODS",
         aciklama: "Kulübün moderatör ekibidir. Kuralların uygulanması ve kulüp organizasyonunun yürütülmesinden sorumludur.",
       },
-    ],
-
-    // Koşullar — her madde ayrı satırda gösterilir
-    kosullar: [
-      "<strong>C1.</strong> Kulübe üyelik başvurusu başvuru formu aracılığıyla yapılır. Reel ortamlarda yüz yüze yapılan buluşmalara katılabilmek ve kulüp üyesi olabilmek için başvuru formunun doldurulması gereklidir.",
-      "<strong>Başvuru formu:</strong> <a href='https://forms.gle/Q2HXcBiZkrEuA9wB9' target='_blank'>forms.gle/Q2HXcBiZkrEuA9wB9</a>",
-      "<strong>C1.2.</strong> Kulübe yeni katılan üyelerden katılım bedeli alınır; ancak bu bedel kulübün hesabına değil, kulübün belirlediği STK'lardan birine bağış olarak yapılır. Bağış dekontu MODS'a iletilmelidir; aksi takdirde başvuru geçersiz sayılır.",
-      "Bağış yapılabilecek kurumlar ve güncel tutar başvuru sayfasında belirtilir.",
-      "<strong>C2.</strong> Başvurular MODS tarafından incelenir ve uygun kontenjan bulunması halinde başvuru sahibi kulüp iletişim gruplarına eklenir. Güncel kulüp kontenjanı maksimum <strong>70 kişidir</strong>.",
-      "<strong>C3.</strong> Başvuru formu kulübün genişleme politikalarına göre MODS tarafından belirli dönemlerde kapatılıp açılabilir.",
-      "<strong>C5.</strong> Her üyelik grubu için ayrı bir WhatsApp iletişim grubu bulunur. Kulübün temel iletişim platformu bu gruplardır.",
     ],
 
     altNot: "Sorularınız için Instagram hesabımızdan veya iletişim sayfasından bize ulaşabilirsiniz.",
