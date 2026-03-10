@@ -83,12 +83,6 @@ const ICERIK = {
     liste: [
       {
         tip:    "yeni",
-        tarih:  "Mart 2026",
-        baslik: "Web Sitemiz Yayında",
-        metin:  "Düşünseli Kitap Kulübü'nün resmi web sitesi artık yayında. Duyurularımızı, kulüp kurallarımızı ve başvuru bilgilerini buradan takip edebilirsiniz.",
-      },
-      {
-        tip:    "etkinlik",
         tarih:  "Yakında",
         baslik: "Salection Kitap Seçimi — Yeni Dönem",
         metin:  "Yeni okuma döneminin kitap seçim süreci yakında başlıyor. Öneri ve puanlama tarihleri duyurulacaktır.",
@@ -98,6 +92,12 @@ const ICERIK = {
         tarih:  "Süregelen",
         baslik: "Başvuru Formu Bilgisi",
         metin:  "Kulübe katılmak isteyenler için başvuru formu hazırlanmaktadır. Form hazır olduğunda bu sayfadan ve Instagram hesabımızdan duyurulacaktır.",
+      },
+      {
+        tip:    "bilgi",
+        tarih:  "Mart 2026",
+        baslik: "Web Sitemiz Yayında",
+        metin:  "Düşünseli Kitap Kulübü'nün resmi web sitesi artık yayında. Duyurularımızı, kulüp kurallarımızı ve başvuru bilgilerini buradan takip edebilirsiniz.",
       },
     ],
   },
