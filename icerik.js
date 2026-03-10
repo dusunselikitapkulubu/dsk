@@ -16,6 +16,37 @@ const ICERIK = {
   },
 
   // ── Başvuru Sayfası ─────────────────────────────────────
+  <div class="uyelik-kartlari">
+
+  <div class="uyelik-kart">
+    <h3>🟡 Lobi</h3>
+    <p>
+      Kulübe yeni katılan üyelerin bulunduğu başlangıç grubudur.
+      En fazla 3 ay lobide kalınabilir. Okuma toplantılarına katılım
+      durumuna göre üyeler Salon grubuna geçer.
+    </p>
+  </div>
+
+  <div class="uyelik-kart">
+    <h3>🟢 Salon</h3>
+    <p>
+      Kulübün aktif üyelerinden oluşan ana gruptur.
+      Kitap seçimleri ve oylamalar bu grupta yapılır.
+      Katılım puanı sistemiyle üyelik durumu korunur.
+    </p>
+  </div>
+
+  <div class="uyelik-kart">
+    <h3>🔵 MODS</h3>
+    <p>
+      Kulübün moderatör ekibidir.
+      Kuralların uygulanması ve kulüp organizasyonunun
+      yürütülmesinden sorumludur.
+    </p>
+  </div>
+
+</div>
+  
   basvuru: {
     heroEtiket:  "Üyelik",
     heroBaslik:  "Kulübe\n<em>Başvur</em>",
