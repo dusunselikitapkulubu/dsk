@@ -69,10 +69,10 @@ const ICERIK = {
       },
     ],
 
-    altNot: "Sorularınız için Instagram hesabımızdan veya iletişim sayfasından bize ulaşabilirsiniz.",
+    altNot: "Sorularınız için <strong>Instagram</strong> <a href='Instagram' target='_blank'>https://instagram.com/dusunselikitapkulubu</a> hesabımızdan veya iletişim sayfasından bize ulaşabilirsiniz.",
 
     // Başvuru formu linki hazır olduğunda buraya ekleyin:
-    formLinki:     "",   // Örnek: "https://forms.gle/abc123"
+    formLinki:     "https://forms.gle/nJgkm3nTqjuS7SAQ7",   // Örnek: "https://forms.gle/abc123"
     formButonYazi: "Başvuru Formunu Doldur",
   },
 
