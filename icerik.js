@@ -112,6 +112,8 @@ const ICERIK = {
       "Düşünseli Kitap Kulübü, ortak kitap okumaları yapmak ve bu kitaplar üzerine fiziksel mekânlarda fikir paylaşımında bulunmak amacıyla kurulmuştur.",
       "Her dönem <strong>Salection Kitap Seçimi</strong> yöntemiyle belirlenen üç kitabı birlikte okuyoruz. Üyeler kitapları önerir, puanlar ve en çok oyu alan kitapları birlikte tartışmak üzere bir araya gelir.",
       "Kulübün temel iletişim platformu WhatsApp gruplarıdır. Üyelik üç kategoriden oluşur: <strong>Lobi Üyeleri</strong>, <strong>Salon Üyeleri</strong> ve kulübü yöneten <strong>MODS</strong>.",
+      "Kulüp üyelik formunu dolduranlar, kulüp kurallarını kabul etmiş sayılır."
+      
     ],
 
     // SSS — görsel boş bırakılırsa gösterilmez
@@ -156,17 +158,6 @@ const ICERIK = {
   // ── Kulüp Kuralları ─────────────────────────────────────
   kurallar: {
     bolumler: [
-      {
-        id:     "bolum-a",
-        harf:   "A",
-        baslik: "Genel Bilgiler ve Kurallar",
-        icerik: [
-          { tip: "paragraf", metin: "<strong>A1.</strong> Düşünseli Kitap Kulübü, ortak kitap okumaları yapmak ve bu kitaplar üzerine fiziksel mekânlarda fikir paylaşımında bulunmak amacıyla kurulmuştur." },
-          { tip: "paragraf", metin: "<strong>A2.</strong> Kulübün Instagram adresi: <strong>@dusunselikitapkulubu</strong>" },
-          { tip: "paragraf", metin: "<strong>A3.</strong> Kulüp üyelik formunu dolduranlar, kulüp kurallarını kabul etmiş sayılır. (Form daha sonra yüklenecek)" },
-        ],
-      },
-
       {
         id:     "bolum-b",
         harf:   "B",
