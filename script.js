@@ -127,8 +127,8 @@ function renderHakkinda() {
   const kr = ICERIK.kurallar;
 
   // İçindekiler
-  const tocLinks = kr.bolumler.filter(b => !b.gizli).map((b, i) =>
-    `<a onclick="scrollToRule('${b.id}')">${i + 1} — ${b.baslik}</a>`
+  const tocLinks = kr.bolumler.filter(b => !b.gizli).map(b =>
+    `<a onclick="scrollToRule('${b.id}')">${b.harf} — ${b.baslik}</a>`
   ).join('');
 
   // Kural bölümleri
