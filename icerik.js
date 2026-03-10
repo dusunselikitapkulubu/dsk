@@ -266,7 +266,7 @@ const ICERIK = {
   etkinlikler: {
     heroEtiket:   "Program",
     heroBaslik:   "Etkinlikler\nve <em>Buluşmalar</em>",
-    heroAciklama: "Okuma toplantıları, film geceleri ve diğer kulüp etkinlikleri.",
+    heroAciklama: "Okuma toplantıları ve diğer kulüp etkinlikleri.",
 
     altBaslik: "Yaklaşan Etkinlikler",
 
