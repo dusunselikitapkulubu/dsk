@@ -274,7 +274,7 @@ const ICERIK = {
     one: {
       kategori:  "Kitap Toplantısı",
       baslik:    "Nisan Okuma Toplantısı",
-      aciklama:  "Nisan ayında seçilecek kitabımızı tartışmak üzere bir araya geliyoruz. Okunacak kitap duyurulacak...",
+      aciklama:  "Nisan ayında, belirlenecek kitabımızı tartışmak üzere bir araya geliyoruz. Kitap ismi duyurulacak...",
       etiketler: ["Okuma", "Tartışma","Etkinlik"],
       linkMetin: "Detaylar",    // Boş bırakılırsa buton gösterilmez
       yazar:     "MODS",
