@@ -156,13 +156,47 @@ const ICERIK = {
       {
         id:     "bolum-a",
         harf:   "A",
-        baslik: "Kulüp Okumaları ve Kitap Seçimi",
+        baslik: "Kulüp Okumaları",
         icerik: [
           { tip: "paragraf", metin: "<strong>A1.</strong> Okumalar yaklaşık olarak ayda bir kitap okunacak şekilde planlanır; bu süre değişiklik gösterebilir." },
           { tip: "paragraf", metin: "<strong>A2.</strong> Üyelerden toplantılara ilgili kitabı okumuş olarak katılması beklenir. Kitabı tamamlayamayan üyelerin en az %70'ini okumuş olması beklenir. İlk kez katılan üyeler için bu şart göz ardı edilebilir." },
           { tip: "paragraf", metin: "<strong>A3.</strong> Toplantılar, olağanüstü haller dışında fiziksel mekânlarda gerçekleştirilir." },
           { tip: "paragraf", metin: "<strong>A4.</strong> Okunacak kitaplar, üyelerin önerileri doğrultusunda <strong>Salection Kitap Seçimi</strong> yöntemiyle belirlenir. Bir okuma dönemi üç kitaptan oluşur." },
+
           {
+        id:     "bolum-b",
+        harf:   "B",
+        baslik: "Salection Kitap Seçimi",
+        icerik: [
+          
+              { tip: "paragraf", metin: "<strong>B1.</strong> Salection; Salihli ve İngilizce seçim anlamına gelen election kelimelerinden esinlenerek oluşturulmuş kulübe özgü bir kitap seçim sistemidir." },
+              { tip: "paragraf", metin: "<strong>B2.</strong> Salection Kitap Seçimi, aday önerme ve puanlama süreçlerinden oluşur. Öneri hakkına sahip olanlara <strong>\"önermen\"</strong>, puanlama hakkına sahip olanlara <strong>\"puantör\"</strong> denir." },
+              { tip: "paragraf", metin: "<strong>B3.</strong> Aday önerme ve puanlama süreçlerine katılım hakları, kitap toplantılarına katılım şartına bağlıdır." },
+              { tip: "paragraf", metin: "<strong>B4.</strong> Önermen sayısına göre her önermen şu kadar kitap önerir:" },
+              {
+                tip:       "tablo",
+                basliklar: ["Önermen Sayısı", "Önerilebilecek Kitap Sayısı"],
+                satirlar: [
+                  ["2 önermen",     "Her biri 6 kitap"],
+                  ["3 önermen",     "Her biri 4 kitap"],
+                  ["4–5 önermen",   "Her biri 3 kitap"],
+                  ["6–12 önermen",  "Her biri 2 kitap"],
+                  ["13–24 önermen", "Her biri 1 kitap"],
+                  ["24'ten fazla",  "Her biri 1 kitap; kura ile 24 aday belirlenir"],
+                ],
+              },
+              { tip: "paragraf", metin: "<strong>B5.</strong> Aday sayısı 10'a ulaşmamışsa, MODS eksik adayları önceki seçimlerde önerilmiş fakat seçilmemiş kitaplardan tamamlar." },
+              { tip: "paragraf", metin: "<strong>B6.</strong> Önermenler, aday önerme süresi içinde önerdikleri kitapları geri çekebilir veya değiştirebilir. Süre dolduktan sonra adaylar kesinleşir." },
+              { tip: "paragraf", metin: "<strong>B7.</strong> Aday önerme süreci açık yapılır. Aynı kitap farklı önermenler tarafından önerilirse ilk öneren önermenin önerisi olarak kayıt edilir. Kulüpte daha önce okunmuş bir kitap, okuma tarihinin üzerinden 5 tam yıl geçmeden yeniden önerilemez." },
+              { tip: "paragraf", metin: "<strong>B8.</strong> Puanlama gizli ve kapalı yapılır. Süreç tamamlandıktan sonra sonuç tablosu paylaşılır. Süreç devam ederken oy bilgilerini açıklamak veya ima etmek yasaktır." },
+              { tip: "paragraf", metin: "<strong>B9.</strong> Her puantör aşağıdaki puanları dağıtır. Her puan yalnızca bir kitaba verilebilir; tüm puanların dağıtılması zorunludur:" },
+              { tip: "puanlar", puanlar: [1, 2, 3, 4, 5, 6, 7, 8, 10, 12] },
+              { tip: "paragraf", metin: "<strong>B10. Eşitlik Durumu:</strong> İlk üç kitap belirlenemeyecek şekilde eşitlik oluşması halinde sırasıyla şu adımlar izlenir: tam puan (12) sayısı → 10 puan sayısı → önermenin geçmişteki seçilme sayısı → yazarın kulüpte okunma sayısı → özgün ilk basım yılı → yazarın soyadının alfabetik sırası." },
+        ],
+      },
+          
+          {
+            gizli:true,
             tip:    "altbolum",
             etiket: "A5 — Salection Kitap Seçimi",
             icerik: [
@@ -197,15 +231,14 @@ const ICERIK = {
       },
 
       {
-        gizli:true,
-        id:     "bolum-b",
-        harf:   "B",
+        id:     "bolum-c",
+        harf:   "C",
         baslik: "Okuma Toplantıları",
         icerik: [
-          { tip: "paragraf", metin: "<strong>B1.</strong> Kitabı öneren üye, o toplantının doğal okuma moderatörüdür. Oturumun zamanlamasını ve içeriğini belirler, süreci yönetir ve katılımcıları önceden bilgilendirir." },
-          { tip: "paragraf", metin: "<strong>B2.</strong> Okuma moderatörü, söz hakkının dengeli ve adil dağıtılmasını gözetir; tartışmanın kitap ekseninde kalmasını sağlar." },
-          { tip: "paragraf", metin: "<strong>B3.</strong> Her katılımcı, diğer üyelerin görüşlerine saygılı olmak ve yapıcı bir iletişim ortamını desteklemekle yükümlüdür." },
-          { tip: "paragraf", metin: "<strong>B4.</strong> Kendi önerdiği kitabın toplantısına katılmayan üyenin elde ettiği ilk öneri hakkı elinden alınır." },
+          { tip: "paragraf", metin: "<strong>C1.</strong> Kitabı öneren üye, o toplantının doğal okuma moderatörüdür. Oturumun zamanlamasını ve içeriğini belirler, süreci yönetir ve katılımcıları önceden bilgilendirir." },
+          { tip: "paragraf", metin: "<strong>C2.</strong> Okuma moderatörü, söz hakkının dengeli ve adil dağıtılmasını gözetir; tartışmanın kitap ekseninde kalmasını sağlar." },
+          { tip: "paragraf", metin: "<strong>C3.</strong> Her katılımcı, diğer üyelerin görüşlerine saygılı olmak ve yapıcı bir iletişim ortamını desteklemekle yükümlüdür." },
+          { tip: "paragraf", metin: "<strong>C4.</strong> Kendi önerdiği kitabın toplantısına katılmayan üyenin elde ettiği ilk öneri hakkı elinden alınır." },
         ],
       },
 
