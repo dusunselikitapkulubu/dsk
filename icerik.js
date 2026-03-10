@@ -25,14 +25,50 @@ const ICERIK = {
 
     bilgiler: [
       {
-        baslik: "Üyelik Koşulları",
-        paragraflar: [
-          "Kulübe yeni katılan üyelerden katılım bedeli alınmaz; ancak kulübün belirlediği STK'lardan birine belirlenen tutarda bağış yapılması gerekmektedir.",
-          "Bağış dekontu MODS'a iletilmelidir; aksi takdirde başvuru geçersiz sayılır.",
-          "<strong>Kontenjan:</strong> Güncel kulüp kontenjanı maksimum 70 kişidir. Başvurular uygun kontenjan bulunması halinde onaylanır.",
-          "<strong>Form:</strong> Başvuru formu, kulübün politikaları gereğince belirli dönemlerde MODS tarafından kapatılıp açılabilir.",
-        ]
-      }
+  baslik: "Üyelik Grupları ve Katılım",
+  paragraflar: [
+    "<strong>C1.</strong> Kulübe üyelik başvurusu başvuru formu aracılığıyla yapılır. Reel ortamlarda yüz yüze yapılan buluşmalara katılabilmek ve kulüp üyesi olabilmek için başvuru formunun doldurulması gereklidir.",
+    "<strong>Başvuru formu:</strong> https://forms.gle/Q2HXcBiZkrEuA9wB9",
+
+    "<strong>C1.2.</strong> Kulübe yeni katılan üyelerden katılım bedeli alınır; ancak bu bedel kulübün hesabına değil, kulübün belirlediği STK'lardan birine bağış olarak yapılır. Bağış dekontu MODS'a iletilmelidir; aksi takdirde başvuru geçersiz sayılır.",
+    "Bağış yapılabilecek kurumlar ve güncel tutar başvuru sayfasında belirtilir.",
+
+    "<strong>C2.</strong> Başvurular MODS tarafından incelenir ve uygun kontenjan bulunması halinde başvuru sahibi kulüp iletişim gruplarına eklenir. Güncel kulüp kontenjanı maksimum <strong>70 kişidir</strong>.",
+
+    "<strong>C3.</strong> Başvuru formu kulübün genişleme politikalarına göre MODS tarafından belirli dönemlerde kapatılıp açılabilir.",
+
+    "<strong>C4.</strong> Kulüpte üç farklı üyelik grubu vardır: <strong>Lobi</strong>, <strong>Salon</strong> ve <strong>MODS</strong>.",
+    "<strong>Lobi:</strong> Kulübe yeni katılan üyelerin bulunduğu bekleme ve duyuru alanıdır.",
+    "<strong>Salon:</strong> Kulübün aktif üyelerinden oluşan ana gruptur.",
+    "<strong>MODS:</strong> Kulübün yönetim organıdır.",
+
+    "<strong>C5.</strong> Her üyelik grubu için ayrı bir WhatsApp iletişim grubu bulunur. Kulübün temel iletişim platformu bu gruplardır.",
+
+    "<strong>C6 — Lobi Üyeleri</strong>",
+    "Kulübe yeni katılan tüm üyeler başlangıçta Lobi grubuna dahil edilir. Katılım durumuna göre Salon grubuna geçebilirler.",
+    "Lobide kalma süresi en fazla <strong>3 aydır</strong>. Bu süre içinde herhangi bir okumaya katılmayan üyeler lobiden çıkarılır.",
+    "Kulüpten ayrılan veya devamsızlık nedeniyle çıkarılan üyeler tekrar katılmak isterse tüm başvuru sürecini yeniden tamamlamak zorundadır.",
+
+    "<strong>C7 — Salon Üyeleri</strong>",
+    "Kulübün aktif katılımcı üyelerinden oluşan ana gruptur. Kitap seçimleri ve oylamalar bu grupta yapılır.",
+    "Salon üyesi olabilmek için aşağıdaki şartlardan en az biri sağlanmalıdır:",
+    "• Üst üste <strong>4 kitap buluşmasına</strong> katılmak",
+    "• Son <strong>6 buluşmadan 20 katılım puanı</strong> almak",
+    "• Son <strong>10 buluşmadan 40 katılım puanı</strong> almak",
+    "• <strong>MODS üyesi</strong> olmak",
+    "Her 5 buluşmadan sonra katılım değerlendirmesi yapılır. Şartları sağlamayan üyelerin üyeliği Lobi grubuna düşürülür.",
+    "Üst üste <strong>3 buluşmaya katılmayan</strong> üyeler kontrol vakti beklenmeden Lobi grubuna alınır.",
+
+    "<strong>C8 — MODS</strong>",
+    "MODS üyeleri kulübün moderatörleridir. Kulüp kurallarının uygulanması ve organizasyonun yürütülmesinden sorumludurlar.",
+
+    "<strong>C9 — Katılım Puanları</strong>",
+    "<strong>Kitap Ana Okuma:</strong> Tam katılım 5 puan / Yarım katılım 2,5 puan",
+    "<strong>Kitap Crime Club:</strong> Tam katılım 3 puan / Yarım katılım 1,5 puan",
+    "<strong>Yönetmen Sineması:</strong> Tam katılım 3 puan / Yarım katılım 1,5 puan",
+    "10 kişiden az katılım olan etkinliklerde tam katılanlara <strong>+1 bonus puan</strong> verilir."
+  ]
+}
     ],
 
     altNot: "Sorularınız için Instagram hesabımızdan veya iletişim sayfasından bize ulaşabilirsiniz.",
@@ -150,70 +186,6 @@ const ICERIK = {
               { tip: "paragraf", metin: "<strong>B8.2.</strong> Okuma moderatörü, söz hakkının dengeli ve adil dağıtılmasını gözetir; tartışmanın kitap ekseninde kalmasını sağlar." },
               { tip: "paragraf", metin: "<strong>B8.3.</strong> Her katılımcı, diğer üyelerin görüşlerine saygılı olmak ve yapıcı bir iletişim ortamını desteklemekle yükümlüdür." },
               { tip: "paragraf", metin: "<strong>B8.4.</strong> Kendi önerdiği kitabın toplantısına katılmayan üyenin elde ettiği ilk öneri hakkı elinden alınır." },
-            ],
-          },
-        ],
-      },
-
-      {
-        id:     "bolum-c",
-        harf:   "C",
-        baslik: "Üyelik Grupları ve Katılım",
-        icerik: [
-          { tip: "paragraf", metin: "<strong>C1.</strong> Kulübe üyelik başvurusu, başvuru formu aracılığıyla yapılır. Fiziksel buluşmalara katılabilmek için başvuru formunun doldurulması zorunludur." },
-          { tip: "paragraf", metin: "<strong>C2.</strong> Kulübe yeni katılan üyelerden katılım bedeli alınmaz; ancak kulübün belirlediği STK'lardan birine belirlenen tutarda bağış yapılması gerekmektedir. Bağış dekontu MODS'a iletilmelidir; aksi takdirde başvuru geçersiz sayılır." },
-          { tip: "paragraf", metin: "<strong>C3.</strong> Başvurular MODS tarafından incelenir ve uygun kontenjan bulunması halinde üye iletişim gruplarına eklenir. Güncel kulüp kontenjanı maksimum 70 kişidir." },
-          { tip: "paragraf", metin: "<strong>C4.</strong> Başvuru formu, kulübün politikaları gereğince belirli dönemlerde MODS tarafından kapatılıp açılabilir." },
-          { tip: "paragraf", metin: "<strong>C5.</strong> Üyelik grupları üç tanedir: <strong>Lobi Üyeleri</strong>, <strong>Salon Üyeleri</strong> ve <strong>MODS Üyeleri</strong>. Kulübün temel iletişim platformu WhatsApp gruplarıdır." },
-
-          {
-            tip: "altbolum",
-            etiket: "C6 — Lobi Üyeleri",
-            icerik: [
-              { tip: "paragraf", metin: "Başvurusu onaylanmış ancak Salon üyeliği şartını henüz sağlayamamış üyelerdir. Lobide kalma süresi en fazla 3 aydır; bu süre içinde herhangi bir okumaya katılmayan üye lobiden çıkarılır. Tekrar katılmak isteyen üyenin tüm başvuru aşamalarını yeniden tamamlaması gerekir." },
-            ],
-          },
-
-          {
-            tip: "altbolum",
-            etiket: "C7 — Salon Üyeleri",
-            icerik: [
-              { tip: "paragraf", metin: "Kulübün aktif katılımcı üyelerinden oluşan ana gruptur. Salon üyesi olabilmek için aşağıdaki şartlardan <strong>en az birini</strong> sağlamak gerekir:" },
-              {
-                tip: "tablo",
-                basliklar: ["Şart", "Açıklama"],
-                satirlar: [
-                  ["(a)", "Üst üste 4 kitap buluşmasına katılmak"],
-                  ["(b)", "Son 6 buluşmadan en az 20 katılım puanı almak"],
-                  ["(c)", "Son 10 buluşmadan en az 40 katılım puanı almak"],
-                  ["(d)", "MODS üyesi olmak"],
-                ],
-              },
-              { tip: "paragraf", metin: "Her 5. buluşmadan sonra katılım değerlendirmesi yapılır. Şartları sağlamayan üyelerin Salon üyeliği Lobi'ye düşürülür. Üst üste 3 buluşmaya katılmayanlar değerlendirmeyi beklemeden Lobi'ye alınır." },
-            ],
-          },
-
-          {
-            tip: "altbolum",
-            etiket: "C8 — MODS Üyeleri",
-            icerik: [
-              { tip: "paragraf", metin: "Kulüp moderatörleri; kural koyma, uygulama ve kulübün genel yönetiminden sorumludur." },
-            ],
-          },
-
-          {
-            tip: "altbolum",
-            etiket: "C9 — Katılım Puanları",
-            icerik: [
-              {
-                tip: "tablo",
-                basliklar: ["Etkinlik", "Tam Katılım", "En Az Yarısına Katılım"],
-                satirlar: [
-                  ["Kitap: Ana Okuma",   "5 puan",   "2,5 puan"],
-                  ["Yönetmen Sineması",  "3 puan",   "1,5 puan"],
-                ],
-              },
-              { tip: "paragraf", metin: "10 kişiden az katılımlı etkinliklerde tam katılım sağlayanlara +1 bonus puan verilir." },
             ],
           },
         ],
