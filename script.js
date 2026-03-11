@@ -300,12 +300,10 @@ function showPage(name) {
   
   if (!target || current === target) return;
 
-  // Menü durumunu güncelle
   document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
   const navLink = document.getElementById('nav-' + name);
   if (navLink) navLink.classList.add('active');
 
-  // Akıcı geçiş (Fade Transition)
   if (current) {
     current.classList.remove('fade-in');
     setTimeout(() => {
@@ -313,7 +311,7 @@ function showPage(name) {
       target.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       requestAnimationFrame(() => target.classList.add('fade-in'));
-    }, 250); // CSS transition süresi ile uyumlu
+    }, 250);
   } else {
     target.classList.add('active');
     requestAnimationFrame(() => target.classList.add('fade-in'));
@@ -355,22 +353,43 @@ function scrollToRule(id) {
   }, 100);
 }
 
-// Mobil Menü
+// YENİDEN DÜZENLENEN MENÜ KONTROLLERİ
 function toggleMenu() {
   const nav = document.getElementById('main-nav');
   const overlay = document.querySelector('.nav-overlay');
-  nav.classList.toggle('show');
+  const toggleBtn = document.getElementById('menu-toggle-btn');
+  
+  const isShowing = nav.classList.toggle('show');
   overlay.classList.toggle('show');
+  
+  if (isShowing) {
+    // Menü açılınca arka planın kaymasını engelle
+    document.body.style.overflow = 'hidden'; 
+    // İkonu X'e (kapat) dönüştür
+    toggleBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+  } else {
+    // Menü kapanınca normale dön
+    document.body.style.overflow = '';
+    // İkonu Hamburger menüye döndür
+    toggleBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+  }
 }
 
 function closeMenu() {
   const nav = document.getElementById('main-nav');
   const overlay = document.querySelector('.nav-overlay');
-  nav.classList.remove('show');
-  overlay.classList.remove('show');
+  const toggleBtn = document.getElementById('menu-toggle-btn');
+  
+  if (nav && nav.classList.contains('show')) {
+    nav.classList.remove('show');
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+    if (toggleBtn) {
+      toggleBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+    }
+  }
 }
 
-// SSS Akordeon Mantığı
 function toggleSss(element) {
   const isActive = element.classList.contains('active');
   document.querySelectorAll('.sss-item').forEach(el => {
@@ -397,5 +416,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('page-hakkinda').innerHTML    = renderHakkinda();
   document.getElementById('page-iletisim').innerHTML    = renderIletisim();
 
-  showPage('etkinlikler'); // Varsayılan açılış sayfası
+  showPage('etkinlikler');
 });
