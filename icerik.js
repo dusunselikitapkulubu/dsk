@@ -273,12 +273,12 @@ const ICERIK = {
     // Öne çıkan etkinlik. Kaldırmak için: one: null
     one: {
       kategori: "Kitap Toplantısı",
-      baslik: "Nisan Okuma Toplantısı",
-      aciklama: "Nisan ayında okunacak kitabımız seçildi.",
+      baslik: "Nisan Ayı Okuma Toplantısı",
+      aciklama: "Nisan ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Dinle Küçük Adam - Wilhelm Reich. Toplantı tarihi 5 Nisan 2026 pazar günü saat 14:00.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
-      linkMetin: "Detaylar",    // Boş bırakılırsa buton gösterilmez
+      linkMetin: "",    // Boş bırakılırsa buton gösterilmez
       yazar: "MODS",
-      tarih: "Nisan 2026",
+      tarih: "5 Nisan 2026",
       sure: "",
       gorsel: "assets/content/dinle_kucuk_adam_wilhelm_reich.png",   // Boş bırakılırsa renkli arka plan gösterilir
     },
