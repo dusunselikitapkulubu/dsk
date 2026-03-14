@@ -267,24 +267,34 @@ const ICERIK = {
     heroBaslik: "Etkinlikler\nve <em>Buluşmalar</em>",
     heroAciklama: "Okuma toplantıları ve diğer kulüp etkinlikleri.",
 
-    altBaslik: "Yaklaşan Etkinlikler",
+    oneBaslik: "Yaklaşan Etkinlik",
+    altBaslik: "Geçmiş Etkinlikler",
 
     // Öne çıkan etkinlik. Kaldırmak için: one: null
     one: {
       kategori: "Kitap Toplantısı",
       baslik: "Nisan Okuma Toplantısı",
-      aciklama: "Nisan ayında, belirlenecek kitabımızı tartışmak üzere bir araya geliyoruz. Kitap ismi duyurulacak...",
+      aciklama: "Nisan ayında okunacak kitabımız seçildi.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "Detaylar",    // Boş bırakılırsa buton gösterilmez
       yazar: "MODS",
       tarih: "Nisan 2026",
       sure: "",
-      gorsel: "assets/etkinlikler/read.png",   // Boş bırakılırsa renkli arka plan gösterilir
+      gorsel: "assets/content/dinle_kucuk_adam_wilhelm_reich.png",   // Boş bırakılırsa renkli arka plan gösterilir
     },
 
     //İÇERİKLER "GİZLİ:TRUE" KOMUTUYLA GİZLENDİ. 
     // Etkinlik kartları. renk: "c1"..."c6" (boş bırakırsanız otomatik atanır)
     kartlar: [
+      {
+        kategori: "Kitap Toplantısı",
+        baslik: "Nisan Okuma Toplantısı",
+        aciklama: "Nisan ayında, belirlenecek kitabımızı tartışmak üzere bir araya geliyoruz. Kitap ismi duyurulacak...",
+        yazar: "MODS",
+        tarih: "Nisan 2026",
+        sure: "",
+        gorsel: "assets/etkinlikler/read.png",
+      },
       {
         gizli: true,
         kategori: "Salection",

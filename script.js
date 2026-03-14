@@ -206,7 +206,7 @@ function renderEtkinlikler() {
 
   const oneHTML = v.one ? `
     <section class="featured-section content-container">
-      <h3 class="section-title">Öne Çıkan Etkinlik</h3>
+      <h3 class="section-title">${v.oneBaslik || 'Öne Çıkan Etkinlik'}</h3>
       <div class="featured-card">
         <div class="featured-img">
           ${v.one.gorsel ? `<img src="${v.one.gorsel}" alt="${v.one.baslik}" onerror="this.style.display='none'">` : ''}
