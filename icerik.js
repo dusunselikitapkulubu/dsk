@@ -109,8 +109,8 @@ const ICERIK = {
 
     genelBilgi: [
       "Düşünseli Kitap Kulübü, ortak kitap okumaları yapmak ve bu kitaplar üzerine fiziksel mekânlarda fikir paylaşımında bulunmak amacıyla kurulmuştur.",
-      "Her dönem <strong>Salection Kitap Seçimi</strong> yöntemiyle belirlenen üç kitabı birlikte okuyoruz. Üyeler kitapları önerir, puanlar ve en çok oyu alan kitapları birlikte tartışmak üzere bir araya gelir.",
-      "Kulübün temel iletişim platformu WhatsApp gruplarıdır. Üyelik üç kategoriden oluşur: <strong>Lobi Üyeleri</strong>, <strong>Salon Üyeleri</strong> ve kulübü yöneten <strong>MODS</strong>.",
+      "Okunacak kitaplar kulüp içindeki değerlendirme yöntemleriyle belirlenir ve üyelerimiz bu kitapları birlikte tartışmak üzere bir araya gelir.",
+      "Kulübün temel iletişim platformu WhatsApp gruplarıdır. Üyelik iki ana kategoriden oluşur: <strong>Lobi Üyeleri</strong> ve kulübü yöneten <strong>MODS</strong>.",
       "Kulüp üyelik formunu dolduranlar, kulüp kurallarını kabul etmiş sayılır."
 
     ],
@@ -136,7 +136,7 @@ const ICERIK = {
       },
       {
         soru: "Okunacak kitaplar nasıl belirleniyor?",
-        cevap: "Okunacak kitaplar öneri ve oylama süreçlerinin ardından belirlenir. Kitap önerisi yapmak ve oylamaya katılmak ise kitap okumalarına asgari katılım şartına bağlanmıştır. Detaylı bilgi kulüp kurallarında belirtilmektedir.",
+        cevap: "Okunacak kitaplar güncel kulüp sistemi ve değerlendirme yöntemleriyle belirlenir. Detaylı bilgi kulüp kurallarında belirtilmektedir.",
       },
       {
         soru: "Toplantılara ilgili kitabı okumuş olarak mı katılmalıyım?",
@@ -280,7 +280,7 @@ const ICERIK = {
     one: {
       kategori: "Kitap Toplantısı",
       baslik: "Nisan Ayı Okuma Toplantısı",
-      aciklama: "Nisan ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Dinle Küçük Adam - Wilhelm Reich. Toplantı tarihi 5 Nisan 2026 pazar günü saat 14:00. Mekan Ayrıca duyurulacaktır.",
+      aciklama: "Nisan ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Dinle Küçük Adam - Wilhelm Reich. Toplantı tarihi 5 Nisan 2026 pazar günü saat 14:00. Mekan ayrıca duyurulacaktır.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",    // Boş bırakılırsa buton gösterilmez
       yazar: "MODS",
@@ -292,15 +292,6 @@ const ICERIK = {
     //İÇERİKLER "GİZLİ:TRUE" KOMUTUYLA GİZLENDİ. 
     // Etkinlik kartları. renk: "c1"..."c6" (boş bırakırsanız otomatik atanır)
     kartlar: [
-      {
-        kategori: "Kitap Toplantısı",
-        baslik: "Nisan Okuma Toplantısı",
-        aciklama: "Nisan ayında, belirlenecek kitabımızı tartışmak üzere bir araya geliyoruz. Kitap ismi duyurulacak...",
-        yazar: "MODS",
-        tarih: "Nisan 2026",
-        sure: "",
-        gorsel: "assets/etkinlikler/read.png",
-      },
       {
         gizli: true,
         kategori: "Salection",
