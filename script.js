@@ -201,37 +201,44 @@ function renderHakkinda() {
       ]);
 }
 
-function renderEtkinlikler() {
-  const v = ICERIK.etkinlikler;
-
-  const oneHTML = v.one ? `
-    <section class="featured-section content-container">
-      <h3 class="section-title">${v.oneBaslik || 'Öne Çıkan Etkinlik'}</h3>
+function renderFeaturedCard(etkinlik) {
+  return `
       <div class="featured-card">
         <div class="featured-img">
-          ${v.one.gorsel ? `<img src="${v.one.gorsel}" alt="${v.one.baslik}" onerror="this.style.display='none'">` : ''}
+          ${etkinlik.gorsel ? `<img src="${etkinlik.gorsel}" alt="${etkinlik.baslik}" onerror="this.style.display='none'">` : ''}
           <div class="img-overlay"></div>
         </div>
         <div class="featured-content">
-          <span class="badge badge-accent">${v.one.kategori}</span>
-          <h2>${v.one.baslik}</h2>
-          <p>${v.one.aciklama}</p>
-          <div class="tags">${(v.one.etiketler ||[]).map(t => `<span class="tag">${t}</span>`).join('')}</div>
+          <span class="badge badge-accent">${etkinlik.kategori}</span>
+          <h2>${etkinlik.baslik}</h2>
+          ${etkinlik.aciklama ? `<p>${etkinlik.aciklama}</p>` : ''}
+          <div class="tags">${(etkinlik.etiketler ||[]).map(t => `<span class="tag">${t}</span>`).join('')}</div>
           
           <div class="featured-footer">
             <div class="post-meta">
-              <span class="author">${v.one.yazar}</span>
-              <span class="dot"></span><span>${v.one.tarih}</span>
-              ${v.one.sure ? `<span class="dot"></span><span>${v.one.sure}</span>` : ''}
+              <span class="author">${etkinlik.yazar}</span>
+              ${etkinlik.tarih ? `<span class="dot"></span><span>${etkinlik.tarih}</span>` : ''}
+              ${etkinlik.sure ? `<span class="dot"></span><span>${etkinlik.sure}</span>` : ''}
             </div>
-            ${v.one.linkMetin ? `
+            ${etkinlik.linkMetin ? `
               <a class="btn-text">
-                ${v.one.linkMetin}
+                ${etkinlik.linkMetin}
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>` : ''}
           </div>
         </div>
-      </div>
+      </div>`;
+}
+
+function renderEtkinlikler() {
+  const v = ICERIK.etkinlikler;
+
+  // Öne çıkan etkinlikler (one, one2, one3, ...)
+  const oneKeys = Object.keys(v).filter(k => /^one\d*$/.test(k) && v[k]);
+  const oneHTML = oneKeys.length ? `
+    <section class="featured-section content-container">
+      <h3 class="section-title">${v.oneBaslik || 'Öne Çıkan Etkinlik'}</h3>
+      ${oneKeys.map(k => renderFeaturedCard(v[k])).join('')}
     </section>` : '';
 
   const renkler =['c1','c2','c3','c4','c5','c6'];
