@@ -286,7 +286,7 @@ const ICERIK = {
     one: {
       kategori: "Kitap Toplantısı",
       baslik: "Mayıs Ayı Okuma Toplantısı",
-      aciklama: "Mayıs ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Matt Haig - Gece Yarısı Kütüphanesi. Toplantı tarihi ve Mekan ayrıca duyurulacaktır.",
+      aciklama: "Mayıs ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Matt Haig - Gece Yarısı Kütüphanesi. Toplantı tarihi 3 Mayıs 2026 pazar günü saat 14:00.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",
       yazar: "MODS",
