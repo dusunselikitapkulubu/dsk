@@ -82,6 +82,12 @@ const ICERIK = {
     liste: [
       {
         tip: "yeni",
+        tarih: "17.04.2026",
+        baslik: "Mayıs Ayı Okuma Toplantısı",
+        metin: "Mayıs ayında yapılacak olan toplantı tarihimiz 3 Mayıs 2026 pazar günü saat 14:00 olarak belirlenmiştir.",
+      },
+      {
+        tip: "geçmiş etkinlik",
         tarih: "31 Mart 2026",
         baslik: "Toplantı Mekanı Belirlendi",
         metin: "5 Nisan 2026 pazar günü saat 14:00'de yapılacak olan toplantı mekanımız <a href=\"https://www.google.com/maps/place/The+Kupp+Coffee+%26+More/@38.4827583,28.1448067,20z/data=!4m6!3m5!1s0x14b85b20c1e4abf7:0x7403412d66a99976!8m2!3d38.4827583!4d28.1450774!16s%2Fg%2F11rvfzy3qc?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D\" target=\"_blank\">The Kupp Coffee</a> olarak belirlenmiştir.",
