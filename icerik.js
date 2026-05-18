@@ -298,7 +298,7 @@ const ICERIK = {
     one: {
       kategori: "Kitap Toplantısı",
       baslik: "Haziran Ayı Okuma Toplantısı",
-      aciklama: "Haziran ayında üzerine konuşacağımız eserin Cesare Pavese - Yaşama Uğraşı olduğunu duyurmaktan mutluluk duyuyoruz.",
+      aciklama: "Haziran ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Cesare Pavese -Yaşama Uğraşı. Toplantı tarihi ve mekanı yakında duyurulacaktır.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",
       yazar: "MODS",
