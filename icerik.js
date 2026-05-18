@@ -297,19 +297,28 @@ const ICERIK = {
     // Öne çıkan etkinlik. Kaldırmak için: one: null
     one: {
       kategori: "Kitap Toplantısı",
-      baslik: "Mayıs Ayı Okuma Toplantısı",
-      aciklama: "Mayıs ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Matt Haig - Gece Yarısı Kütüphanesi. Toplantı tarihi 3 Mayıs 2026 pazar günü saat 14:00.",
+      baslik: "Haziran Ayı Okuma Toplantısı",
+      aciklama: "Haziran ayında üzerine konuşacağımız eserin Cesare Pavese - Yaşama Uğraşı olduğunu duyurmaktan mutluluk duyuyoruz.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",
       yazar: "MODS",
       tarih: "",
       sure: "",
-      gorsel: "assets/content/geceyarısıkutuphanesi.jpg",
+      gorsel: "assets/content/yasamaugrasi.jpg",
     },
 
     //İÇERİKLER "GİZLİ:TRUE" KOMUTUYLA GİZLENDİ. 
     // Etkinlik kartları. renk: "c1"..."c6" (boş bırakırsanız otomatik atanır)
     kartlar: [
+      {
+        kategori: "Kitap Toplantısı",
+        baslik: "Mayıs Ayı Okuma Toplantısı",
+        aciklama: "Mayıs ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Matt Haig - Gece Yarısı Kütüphanesi. Toplantı tarihi 3 Mayıs 2026 pazar günü saat 14:00.",
+        yazar: "MODS",
+        tarih: "3 Mayıs 2026",
+        sure: "",
+        gorsel: "assets/content/geceyarısıkutuphanesi.jpg",
+      },
       {
         kategori: "Kitap Toplantısı",
         baslik: "Nisan Ayı Okuma Toplantısı",
