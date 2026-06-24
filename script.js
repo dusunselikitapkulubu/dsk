@@ -3,6 +3,20 @@
 //  Sayfa render ve navigasyon mantığı
 // ============================================================
 
+// ── Sayfa adları sabitleri (magic string hatalarını önler) ──
+const SAYFA = {
+  etkinlikler: 'etkinlikler',
+  basvuru:     'basvuru',
+  duyurular:   'duyurular',
+  hakkinda:    'hakkinda',
+  iletisim:    'iletisim',
+};
+
+// ── Yardımcı: Görünür öğeleri filtrele ───────────────────
+function gorunum(liste) {
+  return (liste || []).filter(item => !item.gizli);
+}
+
 // ── Yardımcı: Hero ───────────────────────────────────────
 function hero(etiket, baslik, aciklama) {
   return `
@@ -17,7 +31,7 @@ function hero(etiket, baslik, aciklama) {
     </section>`;
 }
 
-// ── Yardımcı: Footer ─────────────────────────────────────
+// ── Yardımcı: Footer (merkezi, tek yerden yönetilir) ─────
 function buildFooter(sol, linkler) {
   const linkHTML = linkler.map(l =>
     l.onclick
@@ -30,6 +44,14 @@ function buildFooter(sol, linkler) {
       <div class="footer-links">${linkHTML}</div>
     </div>
   </footer>`;
+}
+
+function buildStandardFooter() {
+  return buildFooter(ICERIK.site.telif, [
+    { href: ICERIK.site.instagram, yazi: 'Instagram', target: '_blank' },
+    { onclick: `showPage('${SAYFA.basvuru}')`, yazi: 'Başvuru' },
+    { onclick: `showPage('${SAYFA.iletisim}')`, yazi: 'İletişim' },
+  ]);
 }
 
 // ── Yardımcı: Kural bloğu içeriği ────────────────────────
@@ -70,12 +92,12 @@ function renderBasvuru() {
   const bloklar = {
     rozet: v.rozet ? `<div class="basvuru-badge"><span class="pulse"></span>${v.rozet}</div>` : '',
     kosullar: v.kosullar && v.kosullar.length
-      ? `<div class="basvuru-kosullar">${v.kosullar.filter(k => !(typeof k === 'object' && k.gizli))
+      ? `<div class="basvuru-kosullar">${gorunum(v.kosullar)
           .map(k => `<p>${typeof k === 'string' ? k : k.metin}</p>`).join('')}</div>` : '',
     kartlar: v.uyelikGruplari && v.uyelikGruplari.length
-      ? `<div class="uyelik-kartlari">${v.uyelikGruplari.filter(g => !g.gizli).map(g => {
+      ? `<div class="uyelik-kartlari">${gorunum(v.uyelikGruplari).map(g => {
           const icerik = g.maddeler
-            ? `<ul class="uyelik-maddeler">${g.maddeler.filter(m => !(typeof m === 'object' && m.gizli))
+            ? `<ul class="uyelik-maddeler">${gorunum(g.maddeler)
                 .map(m => `<li>${typeof m === 'string' ? m : m.metin}</li>`).join('')}</ul>`
             : `<p>${g.aciklama}</p>`;
           return `<div class="uyelik-kart">
@@ -88,26 +110,23 @@ function renderBasvuru() {
         }).join('')}</div>` : '',
     altNot: v.altNot ? `<div class="basvuru-alt-not"><p>${v.altNot}</p></div>` : '',
     formBtn: v.formLinki
-      ? `<a class="btn-primary form-btn" href="${v.formLinki}" target="_blank">
+      ? `<a class="btn-primary" href="${v.formLinki}" target="_blank">
            ${v.formButonYazi}
            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
          </a>` : '',
   };
 
-  const siralama = v.siralama ||['rozet', 'kosullar', 'kartlar', 'altNot', 'formBtn'];
+  const siralama = v.siralama || ['rozet', 'kosullar', 'kartlar', 'altNot', 'formBtn'];
   const icerikHTML = siralama.map(key => bloklar[key] || '').join('');
 
   return hero(v.heroEtiket, v.heroBaslik, v.heroAciklama)
     + `<section class="basvuru-section content-container">${icerikHTML}</section>`
-    + buildFooter(ICERIK.site.telif,[
-        { href: ICERIK.site.instagram, yazi: 'Instagram', target: '_blank' },
-        { onclick: "showPage('iletisim')", yazi: 'İletişim' },
-      ]);
+    + buildStandardFooter();
 }
 
 function renderDuyurular() {
   const v = ICERIK.duyurular;
-  const duyuruHTML = v.liste.filter(d => !d.gizli).map((d, i) => `
+  const duyuruHTML = gorunum(v.liste).map((d, i) => `
     <div class="duyuru-item" style="animation-delay: ${i * 0.1}s">
       <div class="duyuru-meta">
         <span class="badge ${d.tip === 'yeni' ? 'badge-new' : 'badge-default'}">${d.tip.charAt(0).toUpperCase() + d.tip.slice(1)}</span>
@@ -119,17 +138,30 @@ function renderDuyurular() {
 
   return hero(v.heroEtiket, v.heroBaslik, v.heroAciklama)
     + `<section class="duyurular-section content-container">${duyuruHTML}</section>`
-    + buildFooter(ICERIK.site.telif,[
-        { href: ICERIK.site.instagram, yazi: 'Instagram', target: '_blank' },
-        { onclick: "showPage('basvuru')", yazi: 'Başvuru' },
-      ]);
+    + buildStandardFooter();
 }
 
-function renderHakkinda() {
-  const v  = ICERIK.hakkinda;
-  const kr = ICERIK.kurallar;
+// ── Hakkında alt-renderleri (bölünmüş, okunabilir) ────────
 
-  const tocLinks = kr.bolumler.filter(b => !b.gizli).map(b =>
+function renderHakkindaGenelPanel() {
+  const v = ICERIK.hakkinda;
+  return `
+    <div id="panel-genel" class="hakkinda-panel active">
+      <section class="hakkinda-intro">
+        ${v.genelBilgi.map(p => `<p>${p}</p>`).join('')}
+        <div class="social-box">
+          <span>Instagram'da takip edin:</span>
+          <a href="${ICERIK.site.instagram}" target="_blank" class="inline-link">${ICERIK.site.instagramKullanici}</a>
+        </div>
+      </section>
+    </div>`;
+}
+
+function renderHakkindaKurallarPanel() {
+  const kr = ICERIK.kurallar;
+  const gorununBolumler = gorunum(kr.bolumler);
+
+  const tocLinks = gorununBolumler.map(b =>
     `<a onclick="scrollToRule('${b.id}')" class="toc-link">
       <span class="toc-letter">${b.harf}</span>
       <span class="toc-title">${b.baslik}${b.etiket ? ` <span class="badge badge-accent" style="margin-left: 8px; font-size: 0.65rem; padding: 0.2rem 0.5rem; vertical-align: middle;">${b.etiket}</span>` : ''}</span>
@@ -137,7 +169,7 @@ function renderHakkinda() {
     </a>`
   ).join('');
 
-  const bolumlerHTML = kr.bolumler.filter(b => !b.gizli).map((b, i) => `
+  const bolumlerHTML = gorununBolumler.map((b, i) => `
     <div class="rule-chapter" id="${b.id}">
       <div class="chapter-bg-letter">${b.harf}</div>
       <div class="chapter-header">
@@ -146,11 +178,25 @@ function renderHakkinda() {
       </div>
       <div class="rule-block">${renderIcerikBlok(b.icerik)}</div>
     </div>
-    ${i < kr.bolumler.length - 1 ? '<div class="divider"></div>' : ''}
+    ${i < gorununBolumler.length - 1 ? '<div class="divider"></div>' : ''}
   `).join('');
 
-  const sssGorsel = v.sssGorsel ? `<div class="sss-gorsel-wrapper"><img src="${v.sssGorsel}" alt="SSS" class="sss-gorsel" onerror="this.style.display='none'"/></div>` : '';
-  const sssHTML = (v.sss ||[]).map((s, i) => `
+  return `
+    <div id="panel-kurallar" class="hakkinda-panel">
+      <section class="toc-section">
+        <h3 class="section-title">İçindekiler</h3>
+        <div class="toc-links">${tocLinks}</div>
+      </section>
+      <section class="rules-section">${bolumlerHTML}</section>
+    </div>`;
+}
+
+function renderHakkindaSssPanel() {
+  const v = ICERIK.hakkinda;
+  const sssGorsel = v.sssGorsel
+    ? `<div class="sss-gorsel-wrapper"><img src="${v.sssGorsel}" alt="SSS" class="sss-gorsel" onerror="this.style.display='none'"/></div>`
+    : '';
+  const sssHTML = (v.sss || []).map((s, i) => `
     <div class="sss-item" onclick="toggleSss(this)" style="animation-delay: ${i * 0.05}s">
       <div class="sss-soru">
         <span>${s.soru}</span>
@@ -159,6 +205,17 @@ function renderHakkinda() {
       <div class="sss-cevap"><div class="sss-cevap-inner">${parseSssCevap(s.cevap)}</div></div>
     </div>`).join('');
 
+  return `
+    <div id="panel-sss" class="hakkinda-panel">
+      <section class="sss-section">
+        ${sssGorsel}
+        <div class="sss-liste">${sssHTML}</div>
+      </section>
+    </div>`;
+}
+
+function renderHakkinda() {
+  const v = ICERIK.hakkinda;
   return hero(v.heroEtiket, v.heroBaslik, v.heroAciklama)
     + `<div class="hakkinda-tabs-container">
         <div class="hakkinda-tabs">
@@ -167,37 +224,15 @@ function renderHakkinda() {
           <button class="hakkinda-tab" onclick="switchHakkindaTab('sss')">SSS</button>
         </div>
       </div>
-      
       <div class="content-container">
-        <div id="panel-genel" class="hakkinda-panel active">
-          <section class="hakkinda-intro">
-            ${v.genelBilgi.map(p => `<p>${p}</p>`).join('')}
-            <div class="social-box">
-              <span>Instagram'da takip edin:</span>
-              <a href="${ICERIK.site.instagram}" target="_blank" class="inline-link">${ICERIK.site.instagramKullanici}</a>
-            </div>
-          </section>
-        </div>
-
-        <div id="panel-kurallar" class="hakkinda-panel">
-          <section class="toc-section">
-            <h3 class="section-title">İçindekiler</h3>
-            <div class="toc-links">${tocLinks}</div>
-          </section>
-          <section class="rules-section">${bolumlerHTML}</section>
-        </div>
-
-        <div id="panel-sss" class="hakkinda-panel">
-          <section class="sss-section">
-            ${sssGorsel}
-            <div class="sss-liste">${sssHTML}</div>
-          </section>
-        </div>
+        ${renderHakkindaGenelPanel()}
+        ${renderHakkindaKurallarPanel()}
+        ${renderHakkindaSssPanel()}
       </div>`
-    + buildFooter(`${ICERIK.site.telif} — ${ICERIK.site.sonGuncelleme}`,[
+    + buildFooter(`${ICERIK.site.telif} — ${ICERIK.site.sonGuncelleme}`, [
         { href: ICERIK.site.instagram, yazi: 'Instagram', target: '_blank' },
-        { onclick: "showPage('basvuru')",  yazi: 'Başvuru' },
-        { onclick: "showPage('iletisim')", yazi: 'İletişim' },
+        { onclick: `showPage('${SAYFA.basvuru}')`,  yazi: 'Başvuru' },
+        { onclick: `showPage('${SAYFA.iletisim}')`, yazi: 'İletişim' },
       ]);
 }
 
@@ -212,8 +247,7 @@ function renderFeaturedCard(etkinlik) {
           <span class="badge badge-accent">${etkinlik.kategori}</span>
           <h2>${etkinlik.baslik}</h2>
           ${etkinlik.aciklama ? `<p>${etkinlik.aciklama}</p>` : ''}
-          <div class="tags">${(etkinlik.etiketler ||[]).map(t => `<span class="tag">${t}</span>`).join('')}</div>
-          
+          <div class="tags">${(etkinlik.etiketler || []).map(t => `<span class="tag">${t}</span>`).join('')}</div>
           <div class="featured-footer">
             <div class="post-meta">
               <span class="author">${etkinlik.yazar}</span>
@@ -233,7 +267,6 @@ function renderFeaturedCard(etkinlik) {
 function renderEtkinlikler() {
   const v = ICERIK.etkinlikler;
 
-  // Öne çıkan etkinlikler (one, one2, one3, ...)
   const oneKeys = Object.keys(v).filter(k => /^one\d*$/.test(k) && v[k]);
   const oneHTML = oneKeys.length ? `
     <section class="featured-section content-container">
@@ -241,8 +274,8 @@ function renderEtkinlikler() {
       ${oneKeys.map(k => renderFeaturedCard(v[k])).join('')}
     </section>` : '';
 
-  const renkler =['c1','c2','c3','c4','c5','c6'];
-  const kartlarHTML = v.kartlar.filter(k => !k.gizli).map((k, i) => {
+  const renkler = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'];
+  const kartlarHTML = gorunum(v.kartlar).map((k, i) => {
     const renk = k.renk || renkler[i % renkler.length];
     return `<article class="post-card" style="animation-delay: ${i * 0.1}s">
       <div class="post-card-img">
@@ -265,18 +298,15 @@ function renderEtkinlikler() {
   return hero(v.heroEtiket, v.heroBaslik, v.heroAciklama)
     + oneHTML
     + `<section class="posts-section content-container">
-        <h3 class="section-title">${v.altBaslik || 'Tüm Etkinlikler'}</h3>
+        <h3 class="section-title">${v.altBaslik || 'Geçmiş Etkinlikler'}</h3>
         <div class="posts-grid">${kartlarHTML}</div>
       </section>`
-    + buildFooter(ICERIK.site.telif,[
-        { href: ICERIK.site.instagram, yazi: 'Instagram', target: '_blank' },
-        { onclick: "showPage('basvuru')", yazi: 'Başvuru' },
-      ]);
+    + buildStandardFooter();
 }
 
 function renderIletisim() {
   const v = ICERIK.iletisim;
-  const kartHTML = v.kartlar.filter(k => !k.gizli).map((k, i) => `
+  const kartHTML = gorunum(v.kartlar).map((k, i) => `
     <div class="iletisim-card" style="animation-delay: ${i * 0.1}s">
       <div class="ic-label">${k.etiket}</div>
       <div class="ic-value">${k.link ? `<a href="${k.link}" target="_blank">${k.deger}</a>` : k.deger}</div>
@@ -291,10 +321,7 @@ function renderIletisim() {
           <p>${v.not}</p>
         </div>
       </section>`
-    + buildFooter(ICERIK.site.telif,[
-        { href: ICERIK.site.instagram, yazi: 'Instagram', target: '_blank' },
-        { onclick: "showPage('basvuru')", yazi: 'Başvuru' },
-      ]);
+    + buildStandardFooter();
 }
 
 // ════════════════════════════════════════════════════════════
@@ -304,7 +331,7 @@ function renderIletisim() {
 function showPage(name) {
   const current = document.querySelector('.page.active');
   const target = document.getElementById('page-' + name);
-  
+
   if (!target || current === target) return;
 
   document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
@@ -316,7 +343,8 @@ function showPage(name) {
     setTimeout(() => {
       current.classList.remove('active');
       target.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Scroll önce yapılıyor, sonra animasyon — böylece üstten başlar
+      window.scrollTo({ top: 0, behavior: 'instant' });
       requestAnimationFrame(() => target.classList.add('fade-in'));
     }, 250);
   } else {
@@ -327,73 +355,62 @@ function showPage(name) {
 }
 
 function showHakkinda(tab) {
-  showPage('hakkinda');
+  showPage(SAYFA.hakkinda);
   setTimeout(() => switchHakkindaTab(tab), 10);
 }
 
 function switchHakkindaTab(tab) {
   document.querySelectorAll('.hakkinda-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.hakkinda-panel').forEach(p => p.classList.remove('active'));
-  
+
   document.querySelectorAll('.hakkinda-tab').forEach(t => {
     if (t.getAttribute('onclick') && t.getAttribute('onclick').includes(`'${tab}'`)) {
       t.classList.add('active');
     }
   });
-  
+
   const panel = document.getElementById('panel-' + tab);
-  if (panel) {
-    panel.classList.add('active');
-  }
+  if (panel) panel.classList.add('active');
 }
 
 function scrollToRule(id) {
   switchHakkindaTab('kurallar');
+  // Sticky header (72px) + hakkinda-tabs (~52px) = ~130px offset
   setTimeout(() => {
     const el = document.getElementById(id);
     if (el) {
-      const headerOffset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const headerOffset = 130;
+      const offsetPosition = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   }, 100);
 }
 
-// YENİDEN DÜZENLENEN MENÜ KONTROLLERİ
+// ── Menü Kontrolleri ──────────────────────────────────────
+const HAMBURGER_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+const CLOSE_SVG     = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+
 function toggleMenu() {
-  const nav = document.getElementById('main-nav');
-  const overlay = document.querySelector('.nav-overlay');
+  const nav       = document.getElementById('main-nav');
+  const overlay   = document.querySelector('.nav-overlay');
   const toggleBtn = document.getElementById('menu-toggle-btn');
-  
+
   const isShowing = nav.classList.toggle('show');
   overlay.classList.toggle('show');
-  
-  if (isShowing) {
-    // Menü açılınca arka planın kaymasını engelle
-    document.body.style.overflow = 'hidden'; 
-    // İkonu X'e (kapat) dönüştür
-    toggleBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
-  } else {
-    // Menü kapanınca normale dön
-    document.body.style.overflow = '';
-    // İkonu Hamburger menüye döndür
-    toggleBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
-  }
+  document.body.style.overflow = isShowing ? 'hidden' : '';
+  if (toggleBtn) toggleBtn.innerHTML = isShowing ? CLOSE_SVG : HAMBURGER_SVG;
 }
 
 function closeMenu() {
-  const nav = document.getElementById('main-nav');
-  const overlay = document.querySelector('.nav-overlay');
+  const nav       = document.getElementById('main-nav');
+  const overlay   = document.querySelector('.nav-overlay');
   const toggleBtn = document.getElementById('menu-toggle-btn');
-  
+
   if (nav && nav.classList.contains('show')) {
     nav.classList.remove('show');
     overlay.classList.remove('show');
     document.body.style.overflow = '';
-    if (toggleBtn) {
-      toggleBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
-    }
+    if (toggleBtn) toggleBtn.innerHTML = HAMBURGER_SVG;
   }
 }
 
@@ -406,7 +423,7 @@ function toggleSss(element) {
   if (!isActive) {
     element.classList.add('active');
     const answer = element.querySelector('.sss-cevap');
-    answer.style.maxHeight = answer.scrollHeight + "px";
+    answer.style.maxHeight = answer.scrollHeight + 'px';
   }
 }
 
@@ -414,7 +431,7 @@ function toggleSss(element) {
 //  BAŞLANGIÇ
 // ════════════════════════════════════════════════════════════
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('site-adi').textContent = ICERIK.site.ad;
 
   document.getElementById('page-basvuru').innerHTML     = renderBasvuru();
@@ -423,5 +440,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('page-hakkinda').innerHTML    = renderHakkinda();
   document.getElementById('page-iletisim').innerHTML    = renderIletisim();
 
-  showPage('etkinlikler');
+  showPage(SAYFA.etkinlikler);
 });
