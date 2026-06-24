@@ -1505,6 +1505,26 @@ footer p {
   }
 }
 
+/* ── Erişilebilirlik: Azaltılmış hareket tercihi ─────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Animasyonla başlayan öğeler için güvenli başlangıç durumu  */
+/* (düşük güç modu veya prefers-reduced-motion olsa bile görünür) */
+.duyuru-item,
+.post-card,
+.iletisim-card,
+.sss-item {
+  animation-fill-mode: both;
+}
+
 @media (max-width: 500px) {
   .uyelik-kart {
     padding: 1.5rem;
