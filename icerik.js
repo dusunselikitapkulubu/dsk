@@ -237,8 +237,8 @@ const ICERIK = {
       //İÇERİK GİZLENDİ.
       {
         gizli: true,
-        id: "bolum-b",
-        harf: "B",
+        id: "bolum-d",
+        harf: "D",
         baslik: "Kulüp Yönetimi (MODS) ve Seçimler",
         icerik: [
           { tip: "paragraf", metin: "<strong>B1.</strong> MODS, kulübün yönetim organıdır; dört üyeden oluşur. İkisi daimi kurucu üye, diğer ikisi ise bir yıllık görev süresi için seçilmiş üyelerdir. Görev süresi 1 Ağustos'ta başlar ve ertesi yıl 1 Ağustos'a kadar devam eder." },
@@ -252,8 +252,8 @@ const ICERIK = {
       //İÇERİK GİZLENDİ.
       {
         gizli: true,
-        id: "bolum-c",
-        harf: "C",
+        id: "bolum-e",
+        harf: "E",
         baslik: "Ek Etkinlikler ve Yönetmen Sineması",
         icerik: [
           { tip: "paragraf", metin: "<strong>C1.</strong> Kitap okumalarının yanı sıra film izleme ve yorumlama, tiyatro, konser, sportif faaliyetler ve benzeri ek etkinlikler gerçekleştirilebilir. Etkinliklerin türü ve sıklığı MODS tarafından belirlenir." },
