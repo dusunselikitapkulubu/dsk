@@ -303,19 +303,28 @@ const ICERIK = {
     // Öne çıkan etkinlik. Kaldırmak için: one: null
     one: {
       kategori: "Kitap Toplantısı",
-      baslik: "Haziran Ayı Okuma Toplantısı",
-      aciklama: "Haziran ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Cesare Pavese - Yaşama Uğraşı. Toplantı mekanı yakında duyurulacaktır.",
+      baslik: "Temmuz Ayı Okuma Toplantısı",
+      aciklama: "Temmuz ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı İhsan Oktay Anar - Puslu Kıtalar Atlası. Toplantı tarihi 2 Ağustos 2026 pazar günü.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",
       yazar: "MODS",
-      tarih: "12 Temmuz 2026",
+      tarih: "2 Ağustos 2026",
       sure: "",
-      gorsel: "assets/content/yasamaugrasi.jpg",
+      gorsel: "assets/etkinlikler/puslu-kitalar-atlasi.png",
     },
 
     //İÇERİKLER "GİZLİ:TRUE" KOMUTUYLA GİZLENDİ. 
     // Etkinlik kartları. renk: "c1"..."c6" (boş bırakırsanız otomatik atanır)
     kartlar: [
+      {
+        kategori: "Kitap Toplantısı",
+        baslik: "Haziran Ayı Okuma Toplantısı",
+        aciklama: "Haziran ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Cesare Pavese - Yaşama Uğraşı. Toplantı tarihi 12 Temmuz 2026 pazar günü.",
+        yazar: "MODS",
+        tarih: "12 Temmuz 2026",
+        sure: "",
+        gorsel: "assets/content/yasamaugrasi.jpg",
+      },
       {
         kategori: "Kitap Toplantısı",
         baslik: "Mayıs Ayı Okuma Toplantısı",
