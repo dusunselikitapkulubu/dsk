@@ -82,6 +82,12 @@ const ICERIK = {
     liste: [
       {
         tip: "yeni",
+        tarih: "18 Temmuz 2026",
+        baslik: "Temmuz Ayı Kitabı: Puslu Kıtalar Atlası",
+        metin: "Temmuz ayında üzerine konuşacağımız kitabımız İhsan Oktay Anar'ın <em>Puslu Kıtalar Atlası</em> olarak belirlenmiştir. Toplantımız <strong>2 Ağustos 2026 pazar günü</strong> gerçekleştirilecektir.",
+      },
+      {
+        tip: "geçmiş",
         tarih: "24 Haziran 2026",
         baslik: "Haziran Ayı Kitap Tahlili — 12 Temmuz",
         metin: "Haziran ayı kitabımız Cesare Pavese'nin <em>Yaşama Uğraşı</em> eseri üzerine yapılacak kitap tahlili toplantısının tarihi <strong>12 Temmuz 2026</strong> olarak belirlenmiştir. Toplantı mekanı yakında duyurulacaktır.",
