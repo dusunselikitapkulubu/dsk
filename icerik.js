@@ -309,19 +309,28 @@ const ICERIK = {
     // Öne çıkan etkinlik. Kaldırmak için: one: null
     one: {
       kategori: "Kitap Toplantısı",
-      baslik: "Temmuz Ayı Okuma Toplantısı",
-      aciklama: "Temmuz ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı İhsan Oktay Anar - Puslu Kıtalar Atlası. Toplantı tarihi 2 Ağustos 2026 pazar günü.",
+      baslik: "Ağustos Ayı Okuma Toplantısı",
+      aciklama: "Ağustos ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Zülfü Livaneli - Bekle Beni. Toplantı tarihi 16 Ağustos 2026 pazar günü.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",
       yazar: "MODS",
-      tarih: "2 Ağustos 2026",
+      tarih: "16 Ağustos 2026",
       sure: "",
-      gorsel: "assets/etkinlikler/puslu-kitalar-atlasi.png",
+      gorsel: "assets/etkinlikler/bekle-beni.jpg",
     },
 
     //İÇERİKLER "GİZLİ:TRUE" KOMUTUYLA GİZLENDİ. 
     // Etkinlik kartları. renk: "c1"..."c6" (boş bırakırsanız otomatik atanır)
     kartlar: [
+      {
+        kategori: "Kitap Toplantısı",
+        baslik: "Temmuz Ayı Okuma Toplantısı",
+        aciklama: "Temmuz ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı İhsan Oktay Anar - Puslu Kıtalar Atlası. Toplantı tarihi 2 Ağustos 2026 pazar günü.",
+        yazar: "MODS",
+        tarih: "2 Ağustos 2026",
+        sure: "",
+        gorsel: "assets/etkinlikler/puslu-kitalar-atlasi.png",
+      },
       {
         kategori: "Kitap Toplantısı",
         baslik: "Haziran Ayı Okuma Toplantısı",
