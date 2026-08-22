@@ -309,7 +309,7 @@ const ICERIK = {
     // Öne çıkan etkinlik. Kaldırmak için: one: null
     one: {
       kategori: "Kitap Toplantısı",
-      baslik: "Haziran Ayı Okuma Toplantısı",
+      baslik: "Eylül Ayı Okuma Toplantısı",
       aciklama: "Önümüzdeki buluşmada üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Sylvia Plath - Sırça Fanus. Toplantı tarihi ve mekanı yakında duyurulacaktır.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",
