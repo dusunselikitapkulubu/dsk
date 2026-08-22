@@ -309,19 +309,28 @@ const ICERIK = {
     // Öne çıkan etkinlik. Kaldırmak için: one: null
     one: {
       kategori: "Kitap Toplantısı",
-      baslik: "Ağustos Ayı Okuma Toplantısı",
-      aciklama: "Ağustos ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Zülfü Livaneli - Bekle Beni. Toplantı tarihi 16 Ağustos 2026 pazar günü.",
+      baslik: "Önümüzdeki Okuma Toplantısı",
+      aciklama: "Önümüzdeki buluşmada üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Sylvia Plath - Sırça Fanus. Toplantı tarihi ve mekanı yakında duyurulacaktır.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",
       yazar: "MODS",
-      tarih: "16 Ağustos 2026",
+      tarih: "",
       sure: "",
-      gorsel: "assets/etkinlikler/bekle-beni.jpg",
+      gorsel: "assets/etkinlikler/sirca-fanus.jpg",
     },
 
     //İÇERİKLER "GİZLİ:TRUE" KOMUTUYLA GİZLENDİ. 
     // Etkinlik kartları. renk: "c1"..."c6" (boş bırakırsanız otomatik atanır)
     kartlar: [
+      {
+        kategori: "Kitap Toplantısı",
+        baslik: "Ağustos Ayı Okuma Toplantısı",
+        aciklama: "Ağustos ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Zülfü Livaneli - Bekle Beni. Toplantı tarihi 16 Ağustos 2026 pazar günü.",
+        yazar: "MODS",
+        tarih: "16 Ağustos 2026",
+        sure: "",
+        gorsel: "assets/etkinlikler/bekle-beni.jpg",
+      },
       {
         kategori: "Kitap Toplantısı",
         baslik: "Temmuz Ayı Okuma Toplantısı",
