@@ -309,19 +309,28 @@ const ICERIK = {
     // Öne çıkan etkinlik. Kaldırmak için: one: null
     one: {
       kategori: "Kitap Toplantısı",
-      baslik: "Eylül Ayı Okuma Toplantısı",
-      aciklama: "Önümüzdeki buluşmada üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Sylvia Plath - Sırça Fanus. Toplantı tarihi ve mekanı yakında duyurulacaktır.",
+      baslik: "Ekim Ayı Okuma Toplantısı",
+      aciklama: "Ekim ayında üzerine konuşacağımız eserimiz seçildi. Eser, Eric Hoffer'ın <em>Kesin İnançlılar</em>ı olarak belirlendi. Toplantı tarihi ve mekanı yakında duyurulacaktır.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",
       yazar: "MODS",
       tarih: "",
       sure: "",
-      gorsel: "assets/etkinlikler/sirca-fanus.jpg",
+      gorsel: "assets/etkinlikler/kesin-inanclilar.jpg",
     },
 
     //İÇERİKLER "GİZLİ:TRUE" KOMUTUYLA GİZLENDİ. 
     // Etkinlik kartları. renk: "c1"..."c6" (boş bırakırsanız otomatik atanır)
     kartlar: [
+      {
+        kategori: "Kitap Toplantısı",
+        baslik: "Eylül Ayı Okuma Toplantısı",
+        aciklama: "Eylül ayında üzerine konuşacağımız kitabımız seçildi. Okunacak eserimizin adı Sylvia Plath - Sırça Fanus.",
+        yazar: "MODS",
+        tarih: "",
+        sure: "",
+        gorsel: "assets/etkinlikler/sirca-fanus.jpg",
+      },
       {
         kategori: "Kitap Toplantısı",
         baslik: "Ağustos Ayı Okuma Toplantısı",
