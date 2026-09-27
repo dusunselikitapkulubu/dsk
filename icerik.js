@@ -310,7 +310,7 @@ const ICERIK = {
     one: {
       kategori: "Kitap Toplantısı",
       baslik: "Ekim Ayı Okuma Toplantısı",
-      aciklama: "Ekim ayında üzerine konuşacağımız eserimiz seçildi. Eser, Eric Hoffer'ın <em>Kesin İnançlılar</em>ı olarak belirlendi. Toplantı tarihi ve mekanı yakında duyurulacaktır.",
+      aciklama: "Ekim ayında üzerine konuşacağımız eserimiz seçildi. Seçilen eser Eric Hoffer - <em>Kesin İnançlılar</em>. Toplantı tarihi ve mekanı yakında duyurulacaktır.",
       etiketler: ["Okuma", "Tartışma", "Etkinlik"],
       linkMetin: "",
       yazar: "MODS",
